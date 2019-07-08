@@ -1,0 +1,2 @@
+class BlackjacksController < ApplicationController
+end
