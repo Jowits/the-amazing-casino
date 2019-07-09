@@ -1,0 +1,43 @@
+<h1 class="main" style="color:black">Welcome to Casino</h1>
+
+   <h3>&emsp; Please sign in, or create a new account</h3>
+   <br>
+   <div class="login_fields">
+      <div id="existing_user">
+         <p>Existing users:</p> <br>
+         <%= form_with url: "/sessions" do |f| %>
+            <p><%= f.label :username %></p>
+            <%= f.text_field :username, size: "20" %> <br><br>
+            <p><%= f.label :password %></p>
+            <%= f.password_field :password, size: "20"  %> <br><br>
+            <div class="ex_user_button">
+               <%= f.submit 'login', id: "ex_user_button" %> <br><br>
+            </div>
+         <%end%>
+      </div>
+
+      <br><br><br>
+
+      <div id="new_user">
+         <p>New users:</p> <br>
+         <%= form_with model: @user do |f| %>
+            <p><%=  f.label :username %> </p>
+            <%= f.text_field :username, size: "20"  %> <br><br>
+            <p><%=  f.label :password %> </p>
+            <%= f.password_field :password, size: "20"  %> <br><br>
+            <div class="new_user_button">
+               <%= f.check_box :balance %>
+               <%=f.submit 'create account', id: "new_user_button" %>
+            </div>
+         <%end%>
+      </div>
+   </div>
+
+
+<%= f.select :age, 18..99 %> <br><br>
+
+
+
+<%= f.submit 'Submit' %>
+<%end%>
+

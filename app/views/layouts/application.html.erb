@@ -10,6 +10,22 @@
   </head>
 
   <body>
+
+  <%= link_to 'Log in / Sign up', new_user_path %>
+  
+
+    <%# ----- add these lines here: ----- %>
+	
+    <% if notice %>
+              <%= notice %>
+    <% end %>
+    
+    <% if alert %>
+              <%= alert %>
+    <% end %>
+	
+	<%# ----- end of added lines ----- %>
+	
     <%= yield %>
   </body>
 </html>
